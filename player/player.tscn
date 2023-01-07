@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c58iokjlg25ju"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_necel"]
+[ext_resource type="PackedScene" uid="uid://b3pwtn3tpq120" path="res://player/head.tscn" id="2_q0imx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ubdj"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_necel")
+
+[node name="Head" parent="." instance=ExtResource("2_q0imx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5ubdj")

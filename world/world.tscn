@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3h0epvf5bxaw"]
+
+[ext_resource type="PackedScene" uid="uid://c58iokjlg25ju" path="res://player/player.tscn" id="1_4eh2q"]
+[ext_resource type="PackedScene" uid="uid://dj87wjproq1n2" path="res://world/Block.tscn" id="2_4gv43"]
+[ext_resource type="Texture2D" uid="uid://bi76v8p188pnk" path="res://assets/art/grass-test.png" id="3_ucg0n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_367vp"]
+albedo_texture = ExtResource("3_ucg0n")
+uv1_scale = Vector3(50, 50, 50)
+uv1_triplanar = true
+texture_filter = 0
+
+[node name="World" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4eh2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58093, 0)
+
+[node name="Ground" parent="." instance=ExtResource("2_4gv43")]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_367vp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 0)

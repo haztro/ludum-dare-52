@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3pwtn3tpq120"]
+
+[ext_resource type="Script" path="res://player/Head.gd" id="1_qcfk6"]
+
+[node name="Head" type="Node3D"]
+script = ExtResource("1_qcfk6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
