@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 @export var gravity_multiplier: float = 3.0
-@export var speed: float = 5
+@export var speed: float = 3
 @export var acceleration: float = 8
 @export var deceleration: float = 10
 @export_range(0.0, 1.0, 0.05) var air_control: float = 0.3

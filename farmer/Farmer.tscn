@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://hpmicnxdixvs"]
+
+[ext_resource type="Script" path="res://farmer/Farmer.gd" id="1_j0bhi"]
+[ext_resource type="PackedScene" uid="uid://5saf2n5ine1e" path="res://farmer/Foot.tscn" id="2_jcu7m"]
+
+[node name="Farmer" type="Node3D"]
+script = ExtResource("1_j0bhi")
+
+[node name="Foot" parent="." instance=ExtResource("2_jcu7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.03601, -4.08974)
+
+[node name="Foot2" parent="." instance=ExtResource("2_jcu7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.03601, 5.2866)

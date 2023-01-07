@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgs6f18f2yhfc"]
+
+[ext_resource type="Texture2D" uid="uid://bff4j5gek2eri" path="res://assets/art/grass-blades.png" id="1_1javq"]
+
+[node name="Sprite3D" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+pixel_size = 0.0625
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_1javq")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)

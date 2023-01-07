@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var cam: Camera3D = $Camera3D
+@onready var cam: Camera3D = $Caasmera3D
 @export var mouse_sensitivity: float = 2.0
 @export var y_limit: float = 90.0
 
@@ -12,6 +12,7 @@ var rot := Vector3()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	mouse_sensitivity = mouse_sensitivity / 1000
 	y_limit = deg_to_rad(y_limit)
 
