@@ -30,7 +30,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("1_l31wm")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dg5rv")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_etfu1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_inkhm")
@@ -44,9 +44,11 @@ offset_amount = Vector2(-10, 0)
 offset_right = 96.0
 offset_bottom = 35.0
 theme_override_fonts/font = ExtResource("1_l31wm")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Play"
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="focus_entered" from="Label" to="." method="_on_label_focus_entered"]

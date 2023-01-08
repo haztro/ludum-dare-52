@@ -32,3 +32,8 @@ omni_attenuation = 2.92817
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_rnrnv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.55
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

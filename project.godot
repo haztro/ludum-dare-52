@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameData="*res://GameData.gd"
+Audio="*res://Audio.tscn"
 
 [input]
 

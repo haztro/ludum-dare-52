@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://hpmicnxdixvs"]
+[gd_scene load_steps=5 format=3 uid="uid://hpmicnxdixvs"]
 
 [ext_resource type="Script" path="res://farmer/Farmer.gd" id="1_j0bhi"]
 [ext_resource type="PackedScene" uid="uid://5saf2n5ine1e" path="res://farmer/Foot.tscn" id="2_jcu7m"]
+[ext_resource type="AudioStream" uid="uid://ns11e5y3hyf8" path="res://assets/audio/big_step.wav" id="3_4ghl4"]
+[ext_resource type="AudioStream" uid="uid://c3xl1mqs2clpm" path="res://assets/audio/farmer.wav" id="4_pi6le"]
 
 [node name="Farmer" type="Node3D" groups=["camera_shaker"]]
 script = ExtResource("1_j0bhi")
@@ -16,4 +18,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
 [node name="RightFoot" parent="." instance=ExtResource("2_jcu7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
 
+[node name="StaminaTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="RunTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Left" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_4ghl4")
+unit_size = 13.87
+
+[node name="Right" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_4ghl4")
+unit_size = 13.87
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_pi6le")
+volume_db = 1.5
+unit_size = 31.68
+autoplay = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StaminaTimer" to="." method="_on_stamina_timer_timeout"]
+[connection signal="timeout" from="RunTimer" to="." method="_on_run_timer_timeout"]

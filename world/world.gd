@@ -25,7 +25,10 @@ func _process(delta):
 func add_score():
 	saved += 1
 	hud.set_score(str(saved) + "/" + str(num_veg))
-
+	
+	if saved == num_veg:
+		hud.show_escape()
+		$Node3D/Farmer.sicko_mode()
 
 
 func _input(event):
@@ -43,4 +46,14 @@ func _on_area_3d_area_entered(area):
 	var player = area.get_parent()
 	if player.is_in_group("player"):
 		if saved == num_veg:
+			player.set_process(false)
+			player.set_process_input(false)
+			player.set_physics_process(false)
+			player.stop_timer()
 			hud.win()
+		else:
+			hud.show_others()
+
+
+func _on_area_3d_area_exited(area):
+	hud.hide_others()

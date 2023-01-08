@@ -42,9 +42,6 @@ func _physics_process(delta) -> void:
 		if velocity.y < 0:
 			velocity.y = 0
 		
-		if Input.is_action_just_pressed("jump"):
-			snap = Vector3.ZERO
-			velocity.y = jump_height
 	else:
 		# Workaround for 'vertical bump' when going off platform
 		if snap != Vector3.ZERO && velocity.y != 0:
@@ -55,7 +52,6 @@ func _physics_process(delta) -> void:
 		velocity.y -= gravity * delta
 	
 	accelerate(delta)
-	
 	move_and_slide()
 
 
@@ -72,6 +68,12 @@ func direction_input() -> void:
 		direction += aim.x
 	direction.y = 0
 	direction = direction.normalized()
+	
+	if direction.x == 0 and direction.y == 0:
+		$Timer.stop()
+	else:
+		if $Timer.is_stopped():
+			$Timer.start()
 
 
 func accelerate(delta: float) -> void:
@@ -106,3 +108,9 @@ func set_veg(vveg):
 	
 func release_veg():
 	veg = null
+
+func stop_timer():
+	$Timer.stop()
+
+func _on_timer_timeout():
+	Audio.play("step", -18, randf_range(0.85, 1.15))

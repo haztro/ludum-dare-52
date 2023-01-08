@@ -16,9 +16,20 @@ func  set_score(val):
 	$Label.text = val
 	
 	
+func show_escape():
+	$Label2.visible = true
+	
+	
+func show_others():
+	$Label3.visible = true
+	
+func hide_others():
+	$Label3.visible = false
+	
+	
 func win():
 	var tween = create_tween()
-	$ColorRect.color = Color.WHITE_SMOKE
+	$ColorRect.color = Color(0.960784, 0.960784, 0.960784, 0)
 	tween.tween_property($ColorRect, "color:a", 1, 3)
 	tween.tween_callback(restart)
 	

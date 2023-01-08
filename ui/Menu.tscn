@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3v38u0wgls6b"]
+[gd_scene load_steps=4 format=3 uid="uid://c3v38u0wgls6b"]
 
 [ext_resource type="Script" path="res://ui/Menu.gd" id="1_op7u1"]
 [ext_resource type="PackedScene" uid="uid://ojsl5gm3ymfu" path="res://ui/MyButton.tscn" id="1_p0ltg"]
+[ext_resource type="FontFile" uid="uid://jefjxcofw5b2" path="res://assets/fonts/NicoClean-Monospaced.ttf" id="3_igvbu"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -20,10 +21,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-offset_left = 528.0
-offset_top = 279.0
-offset_right = 624.0
-offset_bottom = 369.0
+offset_left = 504.0
+offset_top = 136.0
+offset_right = 648.0
+offset_bottom = 258.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/separation = 26
@@ -32,23 +33,31 @@ theme_override_constants/separation = 26
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_right = 96.0
-offset_bottom = 32.0
+offset_right = 144.0
+offset_bottom = 48.0
 grow_horizontal = 1
 grow_vertical = 1
+text = "play"
 
 [node name="Quit" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_p0ltg")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_top = 58.0
-offset_right = 96.0
-offset_bottom = 90.0
+offset_top = 74.0
+offset_right = 144.0
+offset_bottom = 122.0
 grow_horizontal = 1
 grow_vertical = 1
-text = "Quit"
+text = "quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+offset_top = 398.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_top = 250
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -56,6 +65,25 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -116.0
+offset_right = 525.0
+offset_bottom = -11.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_igvbu")
+theme_override_font_sizes/font_size = 32
+text = "Free the others then 
+escape the farm.
+
+
+move:    [wasd]
+look:    [mouse]
+harvest: [left click]"
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -2,7 +2,7 @@ extends Node3D
 
 
 @export var max_health = 100
-@export var speed = 80
+@export var speed = 30
 
 
 var pulling = false
@@ -25,6 +25,7 @@ func _process(delta):
 	
 	
 func harvest():
+	Audio.play("pop", -5, randf_range(0.85, 1.15))
 	$Sprite3D.position.y = 1
 	var player = get_tree().get_first_node_in_group("player")
 	player.release_veg()
@@ -35,12 +36,16 @@ func harvest():
 	harvested = true
 	var world = get_tree().get_first_node_in_group("world")
 	world.add_score()
+	$AudioStreamPlayer.stop()
 	
 func pull():
+	if !$AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
 	pulling = true
 	
 	
 func release():
+	$AudioStreamPlayer.stop()
 	pulling = false
 
 

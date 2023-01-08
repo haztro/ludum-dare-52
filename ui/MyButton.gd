@@ -27,3 +27,11 @@ func _on_focus_entered():
 func _on_focus_exited():
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	tween.tween_property($Label, "position", Vector2.ZERO, 0.2)
+
+
+func _on_mouse_entered():
+	grab_focus()
+
+
+func _on_mouse_exited():
+	release_focus()

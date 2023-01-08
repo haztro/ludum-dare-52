@@ -1,15 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://5saf2n5ine1e"]
+[gd_scene load_steps=2 format=3 uid="uid://5saf2n5ine1e"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_v21ek"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_8wdqs"]
+[ext_resource type="ArrayMesh" uid="uid://14mh5sr4a00" path="res://assets/art/leg.obj" id="1_75yf2"]
 
 [node name="Foot" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.74618, 0, 0, 0, 12.9282, 0, 0, 0, 2.74039, -2.39706, 6.57923, 0)
-mesh = SubResource("BoxMesh_v21ek")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.58563, 0, 0, 0, 2.21763, 0, 0, 0, 3.65571, 0, 0, 0)
-mesh = SubResource("BoxMesh_8wdqs")
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -0.440971, 0, 0)
+mesh = ExtResource("1_75yf2")

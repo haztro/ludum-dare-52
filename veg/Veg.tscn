@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8qlhr18rp1qc"]
+[gd_scene load_steps=5 format=3 uid="uid://8qlhr18rp1qc"]
 
 [ext_resource type="Texture2D" uid="uid://cc2r7ovfao0ax" path="res://assets/art/carrot.png" id="1_6v0nw"]
 [ext_resource type="Script" path="res://veg/Veg.gd" id="1_rxi0d"]
+[ext_resource type="AudioStream" uid="uid://1fgfv1a6bfr7" path="res://assets/audio/pull.wav" id="3_8r5uw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xnw4k"]
 radius = 1.03711
@@ -12,6 +13,7 @@ script = ExtResource("1_rxi0d")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+modulate = Color(0.537255, 0.537255, 0.537255, 1)
 pixel_size = 0.0625
 billboard = 2
 texture_filter = 0
@@ -24,6 +26,9 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94678, 0)
 shape = SubResource("CylinderShape3D_xnw4k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8r5uw")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
