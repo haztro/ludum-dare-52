@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxbnoeibm8a8w"
+path="res://.godot/imported/axe.obj-7b908369a0c1f1e08cf39475e7eb0036.mesh"
+
+[deps]
+
+files=["res://.godot/imported/axe.obj-7b908369a0c1f1e08cf39475e7eb0036.mesh"]
+
+source_file="res://assets/art/axe.obj"
+dest_files=["res://.godot/imported/axe.obj-7b908369a0c1f1e08cf39475e7eb0036.mesh", "res://.godot/imported/axe.obj-7b908369a0c1f1e08cf39475e7eb0036.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

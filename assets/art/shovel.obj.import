@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cudro3x4rbvh8"
+path="res://.godot/imported/shovel.obj-7227a9496b369d0c809c52ba86fd8fb3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shovel.obj-7227a9496b369d0c809c52ba86fd8fb3.mesh"]
+
+source_file="res://assets/art/shovel.obj"
+dest_files=["res://.godot/imported/shovel.obj-7227a9496b369d0c809c52ba86fd8fb3.mesh", "res://.godot/imported/shovel.obj-7227a9496b369d0c809c52ba86fd8fb3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
