@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var cam: Camera3D = $Caasmera3D
+@onready var cam: Camera3D = $Camera3D
 @export var mouse_sensitivity: float = 2.0
 @export var y_limit: float = 90.0
 

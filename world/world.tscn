@@ -24,7 +24,6 @@ fog_density = 0.2021
 fog_sky_affect = 0.672
 fog_height = 3.0
 fog_height_density = -0.5849
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.2655
 volumetric_fog_emission = Color(0.180392, 0.180392, 0.180392, 1)
 volumetric_fog_emission_energy = 0.0
@@ -55,3 +54,4 @@ environment = SubResource("Environment_4wpmm")
 size = 200.0
 
 [node name="Farmer" parent="." instance=ExtResource("5_ufvht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43583, 0, 0)
