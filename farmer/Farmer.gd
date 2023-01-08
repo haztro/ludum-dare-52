@@ -1,5 +1,8 @@
 extends Node3D
 
+
+signal camera_shake_request(amplitude, duration)
+
 @export var SPEED = 0.01
 
 var player
@@ -21,10 +24,16 @@ var right_foot_angle: float = 0
 var l_last_foot_angle: float = 0
 var r_last_foot_angle: float = 0
 
+var l_last_foot_pos = Vector3.ZERO
+var r_last_foot_pos = Vector3.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	state = States.HUNTING
+	l_last_foot_pos = $LeftFoot.global_position
+	r_last_foot_pos = $RightFoot.global_position
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,8 +66,6 @@ func move():
 		var vec = Vector2.from_angle($RightFoot.rotation.y)
 		$RightFoot.position -= (Vector3(vec.x, 0, vec.y)) * SPEED
 		$RightFoot.rotation.y += last_rot - rotation.y
-
-	
 	
 func lerp_angle(from: float, to: float, weight: float) -> float:
 	return from + short_angle_dist(from, to) * weight
@@ -95,6 +102,22 @@ func stomp(foot):
 	var tween = create_tween().set_trans(Tween.TRANS_SINE)
 	tween.tween_property(foot, "position:y", 10, 1).set_ease(Tween.EASE_OUT)
 	tween.tween_property(foot, "position:y", 1, 1).set_ease(Tween.EASE_IN)
+	tween.tween_callback(_on_ground_stomp)
+
+func _on_ground_stomp():
+	var distance = position.distance_to(player.position)
+	var val = 0
+	if distance <= 50:
+		val = (1 - (distance / 50)) * 0.3
+		
+	camera_shake_request.emit(val, 0.1)
+	
+	if distance < 10:
+		var hud = get_tree().get_first_node_in_group("hud")
+		hud.lose()
+		player.set_process(false)
+		player.set_process_input(false)
+		player.set_physics_process(false)
 
 func _on_timer_timeout():
 	var foot = $LeftFoot if !which_foot else $RightFoot

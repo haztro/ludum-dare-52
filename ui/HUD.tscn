@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://g1s40dii8o7e"]
+
+[ext_resource type="Script" path="res://ui/HUD.gd" id="1_00du4"]
+[ext_resource type="FontFile" uid="uid://jefjxcofw5b2" path="res://assets/fonts/NicoClean-Monospaced.ttf" id="1_qncc1"]
+
+[node name="HUD" type="Control" groups=["hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_00du4")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 24.0
+offset_right = -33.0
+offset_bottom = 59.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_qncc1")
+theme_override_font_sizes/font_size = 32
+text = "0/0"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

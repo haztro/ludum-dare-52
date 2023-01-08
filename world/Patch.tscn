@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjbt8o3khgykc"]
+
+[ext_resource type="PackedScene" uid="uid://cpcqwai6bs0lv" path="res://world/Fence.tscn" id="1_y5jhs"]
+[ext_resource type="PackedScene" uid="uid://b6cblosc1ovnd" path="res://world/Gate.tscn" id="2_270oe"]
+
+[node name="Patch" type="Node3D"]
+
+[node name="Fence2" parent="." instance=ExtResource("1_y5jhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6085, -0.470826, -0.00641632)
+
+[node name="Fence3" parent="." instance=ExtResource("1_y5jhs")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.87558, -0.15588, -10.6494)
+
+[node name="Gate" parent="." instance=ExtResource("2_270oe")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.7627, 0, -9.82253)
+
+[node name="Gate2" parent="." instance=ExtResource("2_270oe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.778147, 0, -0.979355)

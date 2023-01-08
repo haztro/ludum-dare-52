@@ -19,6 +19,16 @@ var stop_on_slope := true
 		* gravity_multiplier)
 		
 
+var veg = null
+
+func _process(delta):
+	if Input.is_action_pressed("click"):
+		if veg != null:
+			veg.pull()
+	elif Input.is_action_just_released("click"):
+		if veg != null:
+			veg.release()
+
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta) -> void:
 	input_axis = Input.get_vector("move_back", "move_forward",
@@ -84,3 +94,15 @@ func accelerate(delta: float) -> void:
 	
 	velocity.x = temp_vel.x
 	velocity.z = temp_vel.z
+	
+
+func _input(event):
+	pass
+
+
+func set_veg(vveg):
+	veg = vveg
+	
+	
+func release_veg():
+	veg = null

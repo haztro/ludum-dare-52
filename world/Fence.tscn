@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpcqwai6bs0lv"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1kk4dngektc1" path="res://assets/art/fence.obj" id="1_2gpfs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dm5jd"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.188235, 0.105882, 0.0470588, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5kdf"]
+
+[node name="Fence" type="MeshInstance3D"]
+mesh = ExtResource("1_2gpfs")
+surface_material_override/0 = SubResource("StandardMaterial3D_dm5jd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(10.4658, 0, 0, 0, 7.73395, 0, 0, 0, 0.452134, 4.36104, 3.31158, 0)
+shape = SubResource("BoxShape3D_d5kdf")

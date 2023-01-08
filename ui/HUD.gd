@@ -1,0 +1,33 @@
+extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+func  set_score(val):
+	$Label.text = val
+	
+	
+func win():
+	var tween = create_tween()
+	$ColorRect.color = Color.WHITE_SMOKE
+	tween.tween_property($ColorRect, "color:a", 1, 3)
+	tween.tween_callback(restart)
+	
+	
+func lose():
+	var tween = create_tween()
+	tween.tween_property($ColorRect, "color:a", 1, 1)
+	tween.tween_callback(restart).set_delay(0.5)
+	
+	
+func restart():
+	get_tree().reload_current_scene()

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bicmle8bu23wa"]
+
+[ext_resource type="PackedScene" uid="uid://c3v38u0wgls6b" path="res://ui/Menu.tscn" id="1_tqoiq"]
+[ext_resource type="PackedScene" uid="uid://g1s40dii8o7e" path="res://ui/HUD.tscn" id="2_thxjr"]
+
+[node name="ui" type="CanvasLayer"]
+
+[node name="Menu" parent="." instance=ExtResource("1_tqoiq")]
+
+[node name="HUD" parent="." instance=ExtResource("2_thxjr")]
+visible = false
+grow_horizontal = 2
+grow_vertical = 2

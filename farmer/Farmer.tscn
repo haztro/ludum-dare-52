@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://farmer/Farmer.gd" id="1_j0bhi"]
 [ext_resource type="PackedScene" uid="uid://5saf2n5ine1e" path="res://farmer/Foot.tscn" id="2_jcu7m"]
 
-[node name="Farmer" type="Node3D"]
+[node name="Farmer" type="Node3D" groups=["camera_shaker"]]
 script = ExtResource("1_j0bhi")
 
 [node name="Timer" type="Timer" parent="."]

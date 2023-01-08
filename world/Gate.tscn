@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6cblosc1ovnd"]
+
+[ext_resource type="ArrayMesh" uid="uid://bav5erin7grva" path="res://assets/art/gate.obj" id="1_13kyv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8cq6u"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.129412, 0.054902, 0.0156863, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgtg6"]
+
+[node name="Gate" type="MeshInstance3D"]
+mesh = ExtResource("1_13kyv")
+surface_material_override/0 = SubResource("StandardMaterial3D_8cq6u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 0.4, 1.07813, 3.54182, 0.0113943)
+shape = SubResource("BoxShape3D_bgtg6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(3.5, 0, 0, 0, 7, 0, 0, 0, 0.35, 7.55187, 2.95694, 0.0570683)
+shape = SubResource("BoxShape3D_bgtg6")

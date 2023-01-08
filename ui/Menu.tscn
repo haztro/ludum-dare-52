@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3v38u0wgls6b"]
+
+[ext_resource type="Script" path="res://ui/Menu.gd" id="1_op7u1"]
+[ext_resource type="PackedScene" uid="uid://ojsl5gm3ymfu" path="res://ui/MyButton.tscn" id="1_p0ltg"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_op7u1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+offset_left = 528.0
+offset_top = 279.0
+offset_right = 624.0
+offset_bottom = 369.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 26
+
+[node name="Play" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_p0ltg")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 96.0
+offset_bottom = 32.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Quit" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_p0ltg")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 58.0
+offset_right = 96.0
+offset_bottom = 90.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "Quit"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
